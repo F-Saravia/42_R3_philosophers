@@ -7,6 +7,7 @@ SRCS	=	main.c \
 			ft_atoi.c \
 			ft_isxxx.c \
 			prints_fd.c \
+			parse_argv.c \
 
 SRCS	+=	test_print_state.c
 
