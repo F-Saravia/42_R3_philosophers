@@ -6,7 +6,7 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 18:10:55 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/19 18:25:45 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/19 19:47:53 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,29 @@ bool	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
+//
+// bool	ft_isnbr(char *s)
+// {
+// 	while (*s && ft_isspace(*s))
+// 		s++;
+// 	if (*s == '-' || *s == '+')
+// 		s++;
+// 	while (*s)
+// 	{
+// 		if (!ft_isdigit(*s))
+// 			return (false);
+// 		s++;
+// 	}
+// 	return (true);
+// }
 
-bool	ft_isnbr(char *s)
+bool	ft_ispositivenbr(char *s)
 {
 	while (*s && ft_isspace(*s))
 		s++;
-	if (*s == '-' || *s == '+')
+	if (*s == '-')
+		return (false);
+	if (*s == '+')
 		s++;
 	while (*s)
 	{

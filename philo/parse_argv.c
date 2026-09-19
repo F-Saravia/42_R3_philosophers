@@ -6,7 +6,7 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 18:44:46 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/19 18:46:22 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/19 19:49:10 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,6 @@ void	remember_noet(int n_args)
 "./philo nb_philos time_die time_eat time_sleep [nb_meals]\n");
 }
 
-static bool	valid_argv(int ac, t_state *state)
-{
-	bool	valid;
-
-	valid = true ;
-	if (state->nb_meals < 0)
-		valid = (false);
-	if (state->time_die < 0)
-		valid = (false);
-	if (state->time_eat < 0)
-		valid = (false);
-	if (state->time_sleep < 0)
-		valid = (false);
-	if (ac == 6 && state->nb_meals < 0)
-		valid = (false);
-	if (valid == false)
-		ft_puts_fd(STDERR_FILENO, "Expect args to be positive numbers");
-	return (valid);
-}
-
 bool	parse_argv(int ac, char **av, t_state *state)
 {
 	int	i;
@@ -49,7 +29,7 @@ bool	parse_argv(int ac, char **av, t_state *state)
 	i = 1;
 	while (i < ac)
 	{
-		if (!ft_isnbr(av[i]))
+		if (!ft_ispositivenbr(av[i]))
 		{
 			ft_puts_fd(STDERR_FILENO, "Expect args to be positive numbers");
 			return (false);
@@ -64,5 +44,5 @@ bool	parse_argv(int ac, char **av, t_state *state)
 		state->nb_meals = ft_atoi(av[5]);
 	else
 		state->nb_meals = -1;
-	return (valid_argv(ac, state));
+	return (true);
 }

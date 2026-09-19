@@ -6,7 +6,7 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 16:09:51 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/19 18:46:28 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/19 19:47:32 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_philo_isdoing(long timestamp, int phid, char *doing);
 
 bool	ft_isspace(int c);
 bool	ft_isdigit(int c);
-bool	ft_isnbr(char *s);
+bool	ft_ispositivenbr(char *s);
 int		ft_atoi(const char *nptr);
 
 typedef struct	s_state
