@@ -1,0 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philosophers.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/19 16:09:51 by fasaravi          #+#    #+#             */
+/*   Updated: 2026/09/19 17:58:22 by fasaravi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PHILOSOPHERS_H
+# define PHILOSOPHERS_H
+
+# include <string.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <pthread.h>
+# include <sys/time.h>
+# include <stdbool.h>
+
+/* ************************************************************************** */
+/* UTILS                                                                      */
+/* ************************************************************************** */
+
+# define MSG_FORK "has taken a fork"
+# define MSG_EATS "is eating"
+# define MSG_SLEAPS "is thinking"
+# define MSG_THINKS "died"
+
+void	ft_putstr_fd(int fd, char *s);
+void	ft_puts_fd(int fd, char *s);
+void	ft_putnbr_fd(int fd, long number);
+void	print_philo_isdoing(long timestamp, int phid, char *doing);
+
+int		ft_atoi(const char *nptr);
+
+/* ************************************************************************** */
+/* UTILS                                                                      */
+/* ************************************************************************** */
+
+
+typedef struct	s_state
+{
+	int		nb_philo;
+	int		time_die;
+	int		time_eat;
+	int		time_sleep;
+	int		nb_meals;
+}	t_state;
+
+/* ************************************************************************** */
+/* DEBUG                                                                      */
+/* ************************************************************************** */
+
+void	test_print_state(t_state *state);
+
+#endif // PHILOSOPHERS_H
