@@ -6,28 +6,14 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:02:10 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/19 17:56:16 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/19 18:27:06 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include <stdbool.h>
 
-static int	ft_isspace(int c)
-{
-	return (\
-c == '\f' || \
-c == '\n' || \
-c == '\r' || \
-c == '\t' || \
-c == '\v' || \
-c == ' '\
-);
-}
-
-static int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
+bool	ft_isspace(int c);
+bool	ft_isdigit(int c);
 
 /*
 1- trim whitespace

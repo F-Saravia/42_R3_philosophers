@@ -6,7 +6,7 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 16:09:51 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/19 17:58:22 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/19 18:26:33 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ void	ft_puts_fd(int fd, char *s);
 void	ft_putnbr_fd(int fd, long number);
 void	print_philo_isdoing(long timestamp, int phid, char *doing);
 
+bool	ft_isspace(int c);
+bool	ft_isdigit(int c);
+bool	ft_isnbr(char *s);
 int		ft_atoi(const char *nptr);
 
 /* ************************************************************************** */

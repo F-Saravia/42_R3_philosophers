@@ -4,8 +4,9 @@ CC		=	cc -g3
 CFLAGS	=	-Wall -Wextra -Werror -pthread
 
 SRCS	=	main.c \
+			ft_atoi.c \
+			ft_isxxx.c \
 			prints_fd.c \
-			ft_atoi.c
 
 SRCS	+=	test_print_state.c
 
