@@ -8,8 +8,17 @@ SRCS	=	main.c \
 			ft_isxxx.c \
 			prints_fd.c \
 			parse_argv.c \
+			print_philo_isdoing.c \
+			time_utils.c \
+			state_get_set.c \
+			state_init_clean.c \
+			threads_init.c \
+			threads_start.c \
+			philo_do.c \
+			philo_eat_death.c \
+			fork_gatekeeper.c
 
-SRCS	+=	test_print_state.c
+# SRCS	+=	test_print_state.c
 
 OBJS	= $(SRCS:.c=.o)
 

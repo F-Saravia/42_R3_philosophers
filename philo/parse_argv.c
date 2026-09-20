@@ -6,7 +6,7 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 18:44:46 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/19 19:49:10 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/20 04:45:42 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,21 @@ void	remember_noet(int n_args)
 	ft_putstr_fd(STDERR_FILENO, "Received ");
 	ft_putnbr_fd(STDERR_FILENO, (long) n_args);
 	ft_puts_fd(STDERR_FILENO, " arguments");
-	ft_puts_fd(STDERR_FILENO,\
+	ft_puts_fd(STDERR_FILENO, \
 "./philo nb_philos time_die time_eat time_sleep [nb_meals]\n");
+}
+
+static bool	validate_args_inrange(t_state *state)
+{
+	if (state->nb_philo > 250)
+		return (false);
+	if (state->time_die < 50)
+		return (false);
+	if (state->time_eat < 50)
+		return (false);
+	if (state->time_sleep < 50)
+		return (false);
+	return (true);
 }
 
 bool	parse_argv(int ac, char **av, t_state *state)
@@ -44,5 +57,5 @@ bool	parse_argv(int ac, char **av, t_state *state)
 		state->nb_meals = ft_atoi(av[5]);
 	else
 		state->nb_meals = -1;
-	return (true);
+	return (validate_args_inrange(state));
 }

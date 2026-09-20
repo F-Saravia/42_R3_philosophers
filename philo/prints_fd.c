@@ -6,11 +6,11 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/19 16:37:16 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/19 18:28:04 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/20 04:17:49 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "philosophers.h"
 
 void	ft_putstr_fd(int fd, char *s)
 {
@@ -46,13 +46,4 @@ void	ft_putnbr_fd(int fd, long number)
 	if (number < 0)
 		write(fd, "-", 1);
 	ft_putnbr_fd_digits(fd, number);
-}
-
-void	print_philo_isdoing(long timestamp, int phid, char *doing)
-{
-	ft_putnbr_fd(STDOUT_FILENO, timestamp);
-	write(STDOUT_FILENO, " ", 1);
-	ft_putnbr_fd(STDOUT_FILENO, (long) phid);
-	write(STDOUT_FILENO, " ", 1);
-	ft_puts_fd(STDOUT_FILENO, doing);
 }
