@@ -6,7 +6,7 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 04:17:33 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/20 04:39:24 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/20 05:08:19 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_philo_isdoing(t_philo *philo, char *doing)
 {
-		t_state	*state;
+	t_state	*state;
 
 	state = philo->state;
 	pthread_mutex_lock(&state->lock_print);
