@@ -6,7 +6,7 @@
 /*   By: fasaravi <fasaravi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/20 01:49:28 by fasaravi          #+#    #+#             */
-/*   Updated: 2026/09/20 04:47:17 by fasaravi         ###   ########.fr       */
+/*   Updated: 2026/09/20 05:00:27 by fasaravi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static bool	init_philos(t_state *state)
 	i = 0;
 	while (i < state->nb_philo)
 	{
+		(state->philos[i]).id = i + 1;
 		(state->philos[i]).state = state;
 		(state->philos[i]).eat_count = 0 ;
 		(state->philos[i]).eat_hungry = false;
@@ -96,17 +97,20 @@ bool	state_init(t_state *state)
 {
 	t_philo			*philos;
 	pthread_mutex_t	*forks;
-	int				*availables;
+	bool			*availables;
 
 	philos = malloc(state->nb_philo * sizeof(*philos));
 	if (!philos)
 		return (false);
+	state->philos = philos;
 	forks = malloc(state->nb_philo * sizeof(*forks));
 	if (!forks)
 		return (free(philos), false);
+	state->forks = forks;
 	availables = malloc(state->nb_philo * sizeof(*availables));
 	if (!availables)
 		return (free(philos), free(forks), false);
+	state->gatekeeper.availables = availables;
 	if (!init_locks(state))
 		return (state_clean(state), false);
 	if (!init_forks(state))
